@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .hidden {
+      display: none;
+    }
+    img{
+      width: 300px;
+      height: 200px;
+      object-fit: cover;
+    }
+    .left {
+            position: relative; /* Ensure position context for movement */
+            animation: fadeOutLeft 2s; /* Apply the animation only once */
+    }
+    .right {
+      position: relative; /* Ensure position context for movement */
+      animation: fadeOutRight 2s;
+    }
+    @keyframes fadeOutLeft {
+            0% {
+                opacity: 1;
+                transform: translateX(0);
+            }
+            100% {
+                opacity: 0;
+                transform: translateX(-100px); /* Move text to the left */
+            }
+        }
+  </style>
+</head>
+<body>
+  <div class="slides " id="picture1">
+    <img src="bg.jpg" alt="image1">
+  </div>
+  <div class="slides hidden" id="picture2">
+    <img src="bg2.jpg" alt="image2">
+  </div>
+  <div class="slides hidden" id="picture3">
+    <img src="bg4.jpg" alt="image3">
+  </div>
+  
+  <div class="prvs" id="prnx">
+    <button id="previ">previous</button>
+    <button id="nxt">next</button>
+  </div>
+  <script> 
+
+  var counter = 1;
+  var navi2 = document.getElementById('nxt');
+navi2.addEventListener("click", function(){
+    const divs = document.querySelectorAll('div');
+    divs.forEach(div => {
+        if (div.id.startsWith('picture')) {
+          div.classList.add('hidden');
+
+        }
+      });
+      if(counter==1){
+      const element = document.getElementById('picture2');
+      element.classList.remove('hidden');
+      element.classList.add('left');
+      counter=counter+1;
+      }
+      else if(counter==2){
+        const element = document.getElementById('picture3');
+      element.classList.remove('hidden');
+      counter=counter+1;
+      }
+      else if(counter==3){
+        const element = document.getElementById('picture1');
+      element.classList.remove('hidden');
+      counter=1;
+      }
+    });
+      var navi5 = document.getElementById('previ');
+navi5.addEventListener("click", function(){
+    const divs = document.querySelectorAll('div');
+    divs.forEach(div => {
+        if (div.id.startsWith('picture')) {
+          div.classList.add('hidden');
+        }
+      });
+      if(counter==1){
+      const element = document.getElementById('picture3');
+      element.classList.remove('hidden');
+      counter=3;
+      }
+      else if(counter==2){
+        const element = document.getElementById('picture1');
+      element.classList.remove('hidden');
+      counter=counter-1;
+      }
+      else if(counter==3){
+        const element = document.getElementById('picture2');
+      element.classList.remove('hidden');
+      counter=counter-1;
+      }
+});
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LEONES PROFILE</title>
+    <style>
+        .hid {
+            display: none;
+        }
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden; 
+        }
+
+        .video-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        .bg3 {
+            position: fixed;
+            border-top: 0px;
+            top: 70px;
+            right: 85px;
+            border-radius: 100%;
+            width: 475px;
+            height: 475px;
+            object-fit: cover;
+            box-shadow: 0 0 30px 10px #1A5276;
+            transition: box-shadow 0.3s ease-in-out;
+            overflow: hidden;
+        }   
+        .pic1 {
+            position: absolute;
+            border-top: 0px;
+            bottom: -175px;
+            right: 50px;
+            height: 800px;
+            width: auto;
+
+        }
+        .navcover {
+            background-color: rgba(255, 255, 255, 0.3); /* Less transparent grey background */
+            
+        }
+        nav {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+        padding: 0.5rem;
+        background-color: rgba(128, 128, 128, 0.6); /* Grey with 70% opacity */
+                        
+        }
+        .nav-item{
+       position: flex;  
+       z-index: 1000;
+        color: #FFDF00; 
+        margin: 0 1rem;
+        font-size: 25px;
+        font-weight:bold;
+        text-decoration: none;
+        transition: transform 0.3s ease 0s;
+        }
+        .nav-item:hover {
+        text-decoration: underline;
+        transform: translateY(-5px);
+        cursor: pointer;
+        }
+        .nav-item.selected {
+            text-decoration: underline;
+            transform: translateY(-5px);
+         }
+    .introduct {
+        position: fixed;
+        top: 200px;
+        left: 90px;
+        width: 500px;
+        border-radius: 15px;
+        color: white;
+        font-family: monospace;
+        
+    }
+    
+    .introduct .introname {
+            position: relative;
+            font-size: 45px;
+            left: 20px;
+            border-top: 0px;
+            border-bottom: 0px;
+            margin-bottom: 10px;
+        }
+    .introduct .profession {
+            position: relative;
+            font-size: 25px;
+            left: 125px;
+            color: orange;
+            margin-top: 0px;
+            border-top: 0px;
+            border-bottom: 0px;
+            margin-bottom: 10px;
+
+    }
+    .introduct .saying {
+            position: relative;
+            margin: 50px auto;
+            font-size: 20px;
+            left: 15px;
+            margin-right: 20px;
+            font-style: italic;
+    }
+    .background1 {
+        position: fixed;
+        height: 340px;
+        width: auto;
+        top: 150px;
+        left: 30px;
+        border-radius: 15px;
+        opacity: 0.8;
+    }
+    .educa, .jobex, .awards, .subject {
+        position: fixed;
+        top: 200px;
+        left: 90px;
+        width: 500px;
+        border-radius: 15px;
+        color: white;
+        font-family: monospace;
+        
+    }
+    .educa .abc {
+        position: fixed;
+        left: 220px;
+        top: 140px;
+        font-size: 40px;
+
+    }
+    .def, .ghi, .jkl {
+        position: fixed;
+        left: 220px;
+        top: 140px;
+        font-size: 40px;
+        color: white;
+        text-shadow: 100px 100px 100px;
+    }
+    .hnd, .hnd2 {
+        position: fixed;
+        font-size: 25px;
+        top: 240px;
+        left: 110px;
+        line-height: 0.9;
+        font-style: italic;
+    }
+    .dnshow {
+        display: none;
+    }
+    .opts {
+        font-size: 30px;
+        color: white;
+        text-shadow: 2px 2px 4px orange;
+    }
+    .pge {
+        position: fixed;
+        color: yellow;
+        font-size: 25px;
+        top: 450px;
+        left: 400px;
+    }
+    .arws {
+        font-size: 35px;
+        transition: transform 0.2s ease;
+        position: relative;
+    }
+    #page5-prev, #page5-next {
+        display: inline-block;
+    }
+    #page5-prev:hover {
+        transform: translateX(-5px);   
+        cursor: pointer;
+    }
+    #page5-next:hover {
+        transform: translateX(5px);
+        cursor: pointer;
+    }
+    dt {
+        margin-top: 10px;
+        color: rgb(253, 180, 45);
+        font-weight: bolder;
+    }
+    .csr {
+        position: fixed;
+        font-size: 25px;
+        top: 210px;
+        left: 110px;
+        line-height: 0.9;
+    }
+    .edu {
+        position: fixed;
+        font-size: 25px;
+        top: 210px;
+        left: 110px;
+        line-height: 0.9;
+    }
+    .congrats {
+        position: fixed;
+            border: 0px;
+            top: 210px;
+            left: 100px;
+            width: 430px;
+            height: 275px;
+    }
+    .congrats img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .awts {
+        display: none;
+    }
+        .kanan {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+            position: relative;
+            top: 100px;
+            left: 420px;
+            font-size: 50px;
+            z-index: 2000;
+            display: inline-block;
+        }
+        .kaliwa {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+            position: relative;
+            top: 100px;
+            left: -40px;
+            font-size: 50px;
+            z-index: 2000;
+            display: inline-block;
+        }
+        .kaliwa:hover, .kanan:hover {
+            font-size: 50px;
+            background-color: rgba(0,0,0,0.6);
+            cursor: pointer;
+        }
+        .kaliwa:active, .kanan:active {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+        <nav>
+            <a class="nav-item" id="ST">Subject Handled</a>
+            <a class="nav-item" id="CA">Certificates/Awards</a>
+            <a class="nav-item" id="JE">Job Experiences</a>
+            <a class="nav-item" id="EB">Educational Background</a>
+            <a class="nav-item selected" id="PR">Profile</a>  
+        </nav>
+    <div class="desbox">
+        <img src="bg.jpg" class="background1">
+    </div>
+    <div class="introduct hid" id="div1">
+        <h1 class="introname"><b>JOSHUA C. LEONES</b></h1>
+        <h3 class="profession">IT Instructor</h3>
+        <p class="saying">"Nobody can go back and start a new beginning, but anyone can start today and make a new ending."</p>
+    </div>
+    <div class="educa hid" id="div2">
+        <h1 class="abc">EDUCATION</h1>
+        <div class="edu">
+            <dl>
+                <dt><span class="opts">&#9658</span> Master in Information Technology</dt>
+                <dd>2022-Present, (18 units earned)</dd>
+                <dd>LSPU-SC</dd>
+                <dt><span class="opts">&#9658</span> BS in Information System</dt>
+                <dd>2015-2021</dd>
+                <dd>LSPU-SC</dd>
+            </dl>
+        </div>
+    </div>
+    <div class="jobex hid" id="div3">
+        <h1 class="def">JOB EXPERIENCES</h1>
+        <div class="csr">
+            <dl>
+                <dt><span class="opts">&#9658</span> Part-Time IT Instructor</dt>
+                <dd>2022-Present</dd>
+                <dd>LSPU-SC, CCS</dd>
+                <dt><span class="opts">&#9658</span> CSR Dental Account</dt>
+                <dd>2021-2022</dd>
+                <dd>HGS Alabang</dd>
+                <dt><span class="opts">&#9658</span> Service Crew</dt>
+                <dd>2016-2019</dd>
+                <dd>Siomai Co. Paete Branch</dd>
+            </dl>
+        </div>
+    </div>
+    <div class="awards " id="div4">
+        <h1 class="ghi">CERTIFICATES</h1>
+        <div class="congrats "  id="cong1">
+            <img src="cert1.jpg" alt="">
+        </div>
+        <div class="congrats awts"  id="cong2">
+            <img src="cert2a.jpg" alt="">
+        </div>
+        <div class="congrats awts"  id="cong3">
+            <img src="cert2.jpg" alt="">
+        </div>
+        <div class="congrats awts"  id="cong4">
+            <img src="cert4.jpg" alt="">
+        </div>
+        <div class="congrats awts"  id="cong5">
+            <img src="cert5.jpg" alt="">
+        </div>
+        <div class="congrats awts"  id="cong6">
+            <img src="cert6.jpg" alt="">
+        </div>
+        <div class="congrats awts"  id="cong7">
+            <img src="cert7.jpg" alt="">
+        </div>
+        <div class="congrats awts"  id="cong8">
+            <img src="cert8.jpg" alt="">
+        </div>
+        <div class="congrats awts"  id="cong9">
+            <img src="cert9.jpg" alt="">
+        </div>
+        <a class="kaliwa" id="moveleft">&#10094;</a>
+        <a class="kanan" id="moveright">&#10095;</a>
+    </div>
+    <div class="subject hid" id="div5"> 
+        <h1 class="jkl">SUBJECT HANDLED</h1>
+    
+        <div class="hnd " id="subjectteach1">
+            <a><span class="opts">&#9658</span> Fundamentals of Programming</a><br>
+            <a><span class="opts">&#9658</span> Intermediate Programming</a><br>
+            <a><span class="opts">&#9658</span> Integrative Programming</a><br>
+            <a><span class="opts">&#9658</span> Discrete Mathematics</a><br>
+            <a><span class="opts">&#9658</span> Living in the IT Era</a><br>
+            <a><span class="opts">&#9658</span> Advanced Database System</a><br>
+            <a><span class="opts">&#9658</span> Information Management</a><br>
+            <a><span class="opts">&#9658</span> Platform Technologies</a><br>
+            
+        </div>
+        <div class="hnd2 dnshow" id="subjectteach2">
+            <a><span class="opts">&#9658</span> IT Security And Management</a><br>
+            <a><span class="opts">&#9658</span> Effective Business Communication</a><br>
+            <a><span class="opts">&#9658</span> Enterprise Data Management</a><br>
+            <a><span class="opts">&#9658</span> Enterprise Resource Planning</a><br>
+            <a><span class="opts">&#9658</span> Business Process Management</a><br>
+            <a><span class="opts">&#9658</span> IT Audit and Control</a><br>
+            <a><span class="opts">&#9658</span> System Admin & Maintenance</a><br>
+        </div>
+        <div class="pge">
+            <span class="pagenum" id="pag">1 / 2 </span>
+            <span class="arws" id="page5-prev">&#9668&#9668 </span>
+            <span class="arws" id="page5-next"> &#9658&#9658</span>
+        </div>
+    </div>
+    
+    <video class="video-background" autoplay muted loop>
+        <source src="MP4 Video Live Wallpaper.MP4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <img src="bg3.gif" class="bg3">
+    <div class="imagecontainer">   
+        <img src="mainpic1.png" class="pic1">
+    </div>
+    <div class="desbox">
+        
+    </div>
+    <script src="exe.js"></script>
+    </body>
+</html>

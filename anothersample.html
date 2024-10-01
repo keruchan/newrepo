@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Image Slideshow</title>
+    <style>
+        /* Basic styling for the slideshow */
+        .slideshow-container {
+            position: relative;
+            max-width: 500px;
+            margin: auto;
+            overflow: hidden;
+        }
+        .slides {
+            display: none;
+            width: 100%;
+            transition: opacity 0.5s ease-in-out;
+        }
+        .active {
+            display: block;
+            opacity: 1;
+        }
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -22px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.3s;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+        }
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+        .prev {
+            left: 0;
+            border-radius: 3px 0 0 3px;
+        }
+        .prev:hover, .next:hover {
+            font-size: 24px;
+            background-color: rgba(0,0,0,0.6);
+        }
+        .prev:active, .next:active {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+
+<div class="slideshow-container">
+    <img class="slides active" src="bg.jpg" alt="Image 1">
+    <img class="slides" src="bg2.jpg" alt="Image 2">
+    <img class="slides" src="bg4.jpg" alt="Image 3">
+    <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+    <a class="next" onclick="changeSlide(1)">&#10095;</a>
+</div>
+
+<script>
+    var slideIndex = 0;
+    showSlides(slideIndex);
+
+    function changeSlide(n) {
+        var slides = document.getElementsByClassName("slides");
+        slides[slideIndex].classList.remove("active");
+        slideIndex += n;
+        if (slideIndex >= slides.length) { slideIndex = 0; }
+        if (slideIndex < 0) { slideIndex = slides.length - 1; }
+        slides[slideIndex].classList.add("active");
+    }
+
+    function showSlides(n) {
+        var slides = document.getElementsByClassName("slides");
+        for (var i = 0; i < slides.length; i++) {
+            slides[i].style.opacity = 0;
+            slides[i].style.display = "none"; 
+        }
+        slides[n].style.display = "block"; 
+        setTimeout(function() {
+            slides[n].style.opacity = 1;
+        }, 10);
+    }
+</script>
+
+</body>
+</html>
